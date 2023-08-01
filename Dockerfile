@@ -4,7 +4,7 @@ LABEL maintainer="Luke Childs <lukechilds123@gmail.com>"
 COPY ./bin /usr/local/bin
 
 RUN chmod a+x /usr/local/bin/* && \
-    apk add --no-cache git build-base openssl leveldb-dev rocksdb-dev && \
+    apk add --no-cache git build-base openssl leveldb-dev rocksdb-dev gcompat libstdc++ && \
     pip install aiohttp pylru plyvel websockets git+https://github.com/HathorNetwork/python-rocksdb.git@master uvloop && \
     git clone -b master https://github.com/spesmilo/electrumx.git && \
     cd electrumx && \
